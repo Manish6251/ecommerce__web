@@ -1,0 +1,110 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="needs-validation container mt-5" novalidate>
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4 class="container mt-2 text-center mb-2">Checkout Form</h4>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          [ngClass]="{'is-invalid': checkoutForm.get('name')?.touched && checkoutForm.get('name')?.invalid}"
+        />
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('name')?.touched && checkoutForm.get('name')?.invalid">
+          Please enter your name.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="email"
+          [ngClass]="{'is-invalid': checkoutForm.get('email')?.touched && checkoutForm.get('email')?.invalid}"
+        />
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.invalid">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input
+          type="text"
+          id="address"
+          class="form-control"
+          formControlName="address"
+          [ngClass]="{'is-invalid': checkoutForm.get('address')?.touched && checkoutForm.get('address')?.invalid}"
+        />
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('address')?.touched && checkoutForm.get('address')?.invalid">
+          Please enter your address.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input
+          type="text"
+          id="phone"
+          class="form-control"
+          formControlName="phone"
+          [ngClass]="{'is-invalid': checkoutForm.get('phone')?.touched && checkoutForm.get('phone')?.invalid}"
+        />
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('phone')?.touched && checkoutForm.get('phone')?.invalid">
+          Please enter your phone number.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cardNumber">Card Number:</label>
+        <input
+          type="text"
+          id="cardNumber"
+          class="form-control"
+          formControlName="cardNumber"
+          [ngClass]="{'is-invalid': checkoutForm.get('cardNumber')?.touched && checkoutForm.get('cardNumber')?.invalid}"
+        />
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('cardNumber')?.touched && checkoutForm.get('cardNumber')?.invalid">
+          Please enter your card number.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="expirationDate">Expiration Date:</label>
+        <input
+          type="text"
+          id="expirationDate"
+          class="form-control"
+          formControlName="expirationDate"
+          [ngClass]="{'is-invalid': checkoutForm.get('expirationDate')?.touched && checkoutForm.get('expirationDate')?.invalid}"
+        />
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('expirationDate')?.touched && checkoutForm.get('expirationDate')?.invalid">
+          Please enter the expiration date.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input
+          type="text"
+          id="cvv"
+          class="form-control"
+          formControlName="cvv"
+          [ngClass]="{'is-invalid': checkoutForm.get('cvv')?.touched && checkoutForm.get('cvv')?.invalid}"
+        />
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('cvv')?.touched && checkoutForm.get('cvv')?.invalid">
+          Please enter your CVV.
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
